@@ -1,5 +1,5 @@
-import { Entity, EntitySchema } from 'typeorm';
-import { Article } from 'src/article/article';
+import { EntitySchema } from 'typeorm';
+import { Article } from 'src/article/article.entities';
 
 export const articleSchema = new EntitySchema<Article>({
   name: 'Article',
