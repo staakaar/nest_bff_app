@@ -12,7 +12,7 @@ export class Tag {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @PrimaryGeneratedColumn('uuid')
   tagId: number;
 
   @Column()
