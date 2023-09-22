@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TypeOrmConfigService } from '../config/database';
+import { TypeOrmConfigService } from './config/database';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
-import source from 'config/ormconfig';
+import source from 'apps/nest_bff_app/src/config/ormconfig';
 import { ArticleModule } from './article/article.module';
 import { TagModule } from './tag/tag.module';
 

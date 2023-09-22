@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { Tag } from 'src/tag/tag';
+import { Tag } from '../../tag/tag';
 
 export const tagSchema = new EntitySchema<Tag>({
   name: 'Tag',
