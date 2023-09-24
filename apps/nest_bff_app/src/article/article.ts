@@ -5,7 +5,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { Tag } from 'src/tag/tag';
+import { Tag } from '../tag/tag';
 
 @Entity('articles')
 export class Article {

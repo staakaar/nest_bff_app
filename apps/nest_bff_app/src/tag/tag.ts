@@ -1,4 +1,4 @@
-import { Article } from 'src/article/article';
+import { Article } from '../article/article';
 import {
   Column,
   Entity,

@@ -8,13 +8,15 @@ import { UserModule } from './user/user.module';
 import source from 'apps/nest_bff_app/src/config/ormconfig';
 import { ArticleModule } from './article/article.module';
 import { TagModule } from './tag/tag.module';
+import { ArticlesController } from './article/articles.controller';
+import { ArticleService } from './article/article.service';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useExisting: TypeOrmConfigService,
+      useClass: TypeOrmConfigService,
       dataSourceFactory: async () => {
         const dataSource = await source.initialize();
         return dataSource;
@@ -24,7 +26,7 @@ import { TagModule } from './tag/tag.module';
     ArticleModule,
     TagModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ArticlesController],
+  providers: [AppService, ArticleService],
 })
 export class AppModule {}
