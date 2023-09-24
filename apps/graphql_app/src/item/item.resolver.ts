@@ -16,17 +16,15 @@ import { User } from '../user/user';
 
 @Resolver(of => Item)
 export class ItemResolver {
-  constructor(
-    private readonly itemService: ItemService,
-    private readonly userService: UserService,
-  ) {}
+  constructor(private readonly itemService: ItemService) {}
+  // private readonly userService: UserService,
 
   @Query((returns) => Item, { name: 'item' })
   async item(@Args('id', { type: () => Int }) id: number): Promise<Item> {
     return await this.itemService.findOneById(id);
   }
 
-  @Mutation(returns => Item)
+  @Mutation((returns) => Item)
   async saveTask(@Args('item') item: CreateItem): Promise<Item> {
     return await this.itemService.save(item);
   }

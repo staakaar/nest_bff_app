@@ -11,7 +11,11 @@ export class ItemService {
   ) {}
 
   async findOneById(id: number): Promise<Item> {
-    return this.itemRepository.findOne(id);
+    return this.itemRepository.findOne({ where: { id } });
+  }
+
+  async getItemList(): Promise<Item[]> {
+    return this.itemRepository.find();
   }
 
   async findAll(id): Promise<Item[]> {
