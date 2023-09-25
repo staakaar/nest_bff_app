@@ -7,7 +7,7 @@ import { CreateItem } from './CreateItem';
 @Injectable()
 export class ItemService {
   constructor(
-    @InjectRepository(Item) private readonly itemRepository: Repository<Item>,
+    @InjectRepository(Item) private itemRepository: Repository<Item>,
   ) {}
 
   async findOneById(id: number): Promise<Item> {

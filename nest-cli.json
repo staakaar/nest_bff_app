@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nest_bff_app/src",
+  "sourceRoot": "apps/graphql_app/src",
   "compilerOptions": {
     "builder": "swc",
     "webpack": true,
-    "tsConfigPath": "apps/nest_bff_app/tsconfig.app.json"
+    "tsConfigPath": "apps/graphql_app/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/nest_bff_app",
+  "root": "apps/graphql_app",
   "projects": {
     "nest_bff_app": {
       "type": "application",
