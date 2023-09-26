@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateItem {
+  id: Float!
+  itemNo: Float!
+  name: String!
+  price: Float!
+  quantity: Float!
+  remark: String!
+  unit: String!
+}
+
+type Item {
+  id: Int!
+  itemNo: Int!
+  name: String!
+  price: Int!
+  quantity: Int!
+  remark: String!
+  unit: String!
+  users: [Item!]!
+}
+
+type Mutation {
+  saveTask(item: CreateItem!): Item!
+}
+
+type Query {
+  item(id: Int!): Item!
+}

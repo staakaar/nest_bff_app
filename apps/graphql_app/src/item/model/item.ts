@@ -11,13 +11,13 @@ export class Item {
   @Field()
   name: string;
 
-  @Field(type => BigInt)
+  @Field(type => Int)
   quantity: number;
 
   @Field()
   unit: string;
 
-  @Field(type => BigInt)
+  @Field(type => Int)
   price: number;
 
   @Field(type => String)
