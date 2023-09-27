@@ -14,23 +14,28 @@ import { CreateItem } from './CreateItem';
 import { UserService } from '../user/user.service';
 import { User } from '../user/user';
 
-@Resolver(of => Item)
+@Resolver((of) => Item)
 export class ItemResolver {
   constructor(private readonly itemService: ItemService) {}
   // private readonly userService: UserService,
 
-  @Query((returns) => Item, { name: 'item' })
+  @Query(() => Item)
+  async getItem(): Promise<Item[]> {
+    return await this.itemService.getItem();
+  }
+
+  @Query(() => [Item])
   async item(@Args('id', { type: () => Int }) id: number): Promise<Item> {
     return await this.itemService.findOneById(id);
   }
 
-  @Mutation((returns) => Item)
+  @Mutation(() => Item)
   async saveTask(@Args('item') item: CreateItem): Promise<Item> {
     return await this.itemService.save(item);
   }
 
   /** 親とのリレーションシップ */
-  @ResolveField('users', (returns) => [Item])
+  @ResolveField('users', () => [Item])
   async posts(@Parent() user: User): Promise<Item[]> {
     const { id } = user;
     return await this.itemService.findAll({ userId: id });

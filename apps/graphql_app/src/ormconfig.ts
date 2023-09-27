@@ -7,7 +7,7 @@ const source = new DataSource({
   username: 'admin',
   password: 'admin',
   database: 'graghql_app',
-  entities: ['src/**/*.entities.ts'],
+  entities: ['src/**/*.entity.ts'],
   migrations: ['db/migrations/*.ts'],
   synchronize: false,
 });

@@ -10,6 +10,10 @@ export class ItemService {
     @InjectRepository(Item) private itemRepository: Repository<Item>,
   ) {}
 
+  async getItem(): Promise<Item[]> {
+    return this.itemRepository.find();
+  }
+
   async findOneById(id: number): Promise<Item> {
     return this.itemRepository.findOne({ where: { id } });
   }

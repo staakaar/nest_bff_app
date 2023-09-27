@@ -13,11 +13,11 @@ input CreateItem {
 }
 
 type Item {
-  id: Int!
-  itemNo: Int!
+  id: Float!
+  itemNo: Float!
   name: String!
-  price: Int!
-  quantity: Int!
+  price: Float!
+  quantity: Float!
   remark: String!
   unit: String!
   users: [Item!]!
@@ -28,5 +28,6 @@ type Mutation {
 }
 
 type Query {
-  item(id: Int!): Item!
+  getItem: Item!
+  item(id: Int!): [Item!]!
 }
