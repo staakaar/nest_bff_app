@@ -2,24 +2,24 @@ import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class Item {
-  @Field()
-  id: number;
+  @Field({ nullable: true })
+  id?: number;
 
-  @Field()
-  itemNo: number;
+  @Field({ nullable: true })
+  itemNo?: number;
 
-  @Field()
-  name: string;
+  @Field({ nullable: true })
+  name?: string;
 
-  @Field()
-  quantity: number;
+  @Field({ nullable: true })
+  quantity?: number;
 
-  @Field()
-  unit: string;
+  @Field({ nullable: true })
+  unit?: string;
 
-  @Field()
-  price: number;
+  @Field({ nullable: true })
+  price?: number;
 
-  @Field()
-  remark: string;
+  @Field({ nullable: true })
+  remark?: string;
 }

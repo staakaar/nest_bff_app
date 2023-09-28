@@ -7,11 +7,9 @@ import {
   ResolveField,
   Resolver,
 } from '@nestjs/graphql';
-import { of } from 'rxjs';
 import { Item } from './model/item';
 import { ItemService } from './item.service';
 import { CreateItem } from './CreateItem';
-import { UserService } from '../user/user.service';
 import { User } from '../user/user';
 
 @Resolver((of) => Item)
@@ -19,7 +17,7 @@ export class ItemResolver {
   constructor(private readonly itemService: ItemService) {}
   // private readonly userService: UserService,
 
-  @Query(() => Item)
+  @Query((returns) => Item, { name: 'item', nullable: true })
   async getItem(): Promise<Item[]> {
     return await this.itemService.getItem();
   }
