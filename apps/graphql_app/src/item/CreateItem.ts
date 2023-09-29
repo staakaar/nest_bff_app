@@ -2,24 +2,24 @@ import { Field, InputType } from '@nestjs/graphql';
 
 @InputType()
 export class CreateItem {
-  @Field()
+  @Field({ nullable: false })
   id: number;
 
-  @Field()
+  @Field({ nullable: true })
   itemNo: number;
 
-  @Field()
+  @Field({ nullable: true })
   name: string;
 
-  @Field()
+  @Field({ nullable: true })
   quantity: number;
 
-  @Field()
+  @Field({ nullable: true })
   unit: string;
 
-  @Field()
+  @Field({ nullable: true })
   price: number;
 
-  @Field()
+  @Field({ nullable: true })
   remark: string;
 }

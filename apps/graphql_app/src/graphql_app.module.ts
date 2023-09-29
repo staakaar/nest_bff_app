@@ -13,6 +13,7 @@ import { ItemService } from './item/item.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Item } from './item/item.entity';
 import { ItemResolver } from './item/item.resolver';
+import { User } from './user/user.entity';
 
 @Module({
   imports: [
@@ -30,7 +31,7 @@ import { ItemResolver } from './item/item.resolver';
       password: 'admin',
       database: 'graghql_app',
       synchronize: true,
-      entities: [Item],
+      entities: [Item, User],
     }),
     ItemModule,
     UserModule,

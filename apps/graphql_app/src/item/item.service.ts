@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Item } from './model/item';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateItem } from './CreateItem';
+import { Item } from './item.entity';
 
 @Injectable()
 export class ItemService {
@@ -26,7 +26,7 @@ export class ItemService {
     return this.itemRepository.find(id);
   }
 
-  async save(item: CreateItem): Promise<Item> {
+  async saveItem(item: CreateItem): Promise<Item> {
     return this.itemRepository.save(item);
   }
 }

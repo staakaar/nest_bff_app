@@ -4,29 +4,47 @@
 
 input CreateItem {
   id: Float!
-  itemNo: Float!
-  name: String!
-  price: Float!
-  quantity: Float!
-  remark: String!
-  unit: String!
-}
-
-type Item {
-  id: Float
   itemNo: Float
   name: String
   price: Float
   quantity: Float
   remark: String
   unit: String
+}
+
+type Item {
+  id: Float!
+  itemNo: Float!
+  name: String!
+  price: Float!
+  quantity: Float!
+  remark: String!
+  unit: String!
   users: [Item!]!
 }
 
 type Mutation {
-  saveTask(item: CreateItem!): Item!
+  saveItem(item: CreateItem!): Item!
+  saveUser(user: NewUser!): User!
+}
+
+input NewUser {
+  age: String!
+  birthDay: String!
+  firstName: String!
+  id: Float!
+  lastName: String!
 }
 
 type Query {
-  item(id: Int!): [Item!]!
+  item(id: Int!): Item
+  user: [User!]
+}
+
+type User {
+  age: String!
+  birthDay: String!
+  firstName: String!
+  id: Float!
+  lastName: String!
 }
