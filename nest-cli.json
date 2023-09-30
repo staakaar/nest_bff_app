@@ -27,6 +27,17 @@
       "compilerOptions": {
         "tsConfigPath": "apps/graphql_app/tsconfig.app.json"
       }
+    },
+    "grpc_app": {
+      "type": "application",
+      "root": "apps/grpc_app",
+      "entryFile": "main",
+      "sourceRoot": "apps/grpc_app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/grpc_app/tsconfig.app.json",
+        "assets": ["**/*.proto"],
+        "watchAssets": true
+      }
     }
   }
 }
