@@ -10,7 +10,7 @@ import { join } from 'path';
         transport: Transport.GRPC,
         options: {
           package: 'item',
-          protoPath: join(__dirname + './item/item.proto'),
+          protoPath: join(__dirname + '/item/item.proto'),
         },
       },
     ]),
